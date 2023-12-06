@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "typescript": "^5.3.2",
+    "@types/chrome": "^0.0.253"
+  },
+  "scripts":
+  {
+    "build": "tsc",
+    "install-and-build": "npm install && npm run build"
+  }
+}

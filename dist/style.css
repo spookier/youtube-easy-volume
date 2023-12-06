@@ -1,0 +1,91 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #242526;
+    color: #ffffff;
+    text-align: center;
+    overflow: hidden; /* Ensures no scrolling occurs */
+}
+
+.container
+{
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #242526;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Volume Display */
+#volDisplay {
+    font-size: 1.4em;
+    margin-bottom: 15px;
+}
+
+#volumeValue {
+    font-weight: bold;
+    color: #4fc3f7;
+}
+
+
+
+/* Slider Styles */
+#volSlider {
+    
+    -webkit-appearance: none;
+    width: 180px;
+    height: 8px;
+    border-radius: 5px;
+    background: #333;
+    outline: none;
+    opacity: 0.9;
+    transition: opacity .2s;
+}
+
+#volSlider:hover {
+    opacity: 1;
+}
+
+#volSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #4fc3f7;
+    cursor: pointer;
+    box-shadow: 0 0 2px #000;
+    transition: background-color .3s, transform .3s;
+}
+
+#volSlider::-webkit-slider-thumb:hover {
+    background-color: #29b6f6;
+    transform: scale(1.1);
+}
+
+#volSlider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #4fc3f7;
+    cursor: pointer;
+    box-shadow: 0 0 2px #000;
+    transition: background-color .3s, transform .3s;
+}
+
+#volSlider::-moz-range-thumb:hover {
+    background-color: #29b6f6;
+    transform: scale(1.1);
+}
+
+#volDisplay, #volumeValue {
+    -webkit-user-select: none; /* Chrome, Safari, and Opera */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer */
+    user-select: none; /* Standard syntax */
+}
+
+

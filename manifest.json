@@ -1,0 +1,31 @@
+{
+		"manifest_version": 3,
+		"name": "Better YouTube Volume",
+		"version": "1.0",
+		"description": "A better control over your YouTube volume",
+		"icons":
+		{
+			"16":"assets/logo.png",
+			"32":"assets/logo.png",
+			"48":"assets/logo.png",
+			"128":"assets/logo.png"
+		},
+		"action":
+		{
+			"default_popup": "dist/index.html",
+			"default_title": "A better control over your YouTube volume"
+		},
+		"permissions":
+		[
+			"scripting", "activeTab", "declarativeContent"
+		],
+		"host_permissions":
+		[
+			"http://*/*",
+			"https://*/*"
+		],
+		"background":
+		{
+			"js": "dist/popup/background.js"
+		}
+}
