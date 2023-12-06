@@ -1,4 +1,6 @@
-import { get_volume, update_display, handleSliderMove, isChromeUrl } from "./popup/popup.js"
+import { get_volume, update_display } from "./popup/popup.js"
+import { handleSliderMove, isChromeUrl } from "./popup/popup.js"
+
 
 async function initPopup()
 {

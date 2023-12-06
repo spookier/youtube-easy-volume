@@ -2,13 +2,14 @@ let slider = document.getElementById("volSlider") as HTMLInputElement; // id for
 let volume = document.getElementById("volumeValue") as HTMLElement;     // number_displayed
 volume.innerHTML = slider.value;
 
+
 slider.addEventListener("input", function ()
 {
   volume.innerHTML = this.value;
   const finalValue = Number(this.value) / 100;
 
   chrome.tabs.query({ currentWindow: true, active: true }, (tabs) => {
-	if (tabs[0] && tabs[0].url && tabs[0].url.startsWith("chrome://"))
+	if (tabs[0] && tabs[0].url && (tabs[0].url.startsWith("chrome://") || tabs[0].url.startsWith("https://chromewebstore.google.com/")))
 	{
 		return ;
 	}
@@ -33,19 +34,31 @@ slider.addEventListener("input", function ()
 			update_youtube_display(volume);
 		}
 
-		function update_youtube_display(volume: number)
+		function update_youtube_display(volume: number) : void
 		{
 			let volumePercentage = `${volume * 0.77 * 100}%`;								// Value for the YouTube slider
 			const youtubeVolumeSlider = document.querySelector('.ytp-volume-slider-handle') as HTMLElement | null;
-
-			const volumeClass = document.querySelector(".ytp-volume-panel") as HTMLElement;
-			let vol_value = volumeClass?.getAttribute("aria-valuenow");
-
-
 			if (youtubeVolumeSlider)
 			{
 				youtubeVolumeSlider.style.left = volumePercentage;
 			}
+			
+			const volumeClass = document.querySelector(".ytp-volume-panel") as HTMLElement;
+			if(!volumeClass)
+				return ;
+
+			let vol_text = volumeClass?.getAttribute("aria-valuetext");
+
+
+			
+			// TODO: Do the unmuting here
+			if(vol_text?.includes("muted") == true)
+			{
+				console.log("muted");
+				return ;
+			}
+
+			let vol_value = volumeClass?.getAttribute("aria-valuenow");
 			if(vol_value)
 			{
 				vol_value = String(volume * 100);

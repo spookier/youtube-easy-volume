@@ -7,7 +7,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { get_volume, update_display, handleSliderMove, isChromeUrl } from "./popup/popup.js";
+import { get_volume, update_display } from "./popup/popup.js";
+import { handleSliderMove, isChromeUrl } from "./popup/popup.js";
 function initPopup() {
     return __awaiter(this, void 0, void 0, function* () {
         let volume = yield get_volume();
