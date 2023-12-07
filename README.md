@@ -57,8 +57,8 @@ It's the perfect tool for users who need fine-grained audio adjustments for thei
 # Installation
 
 1. Install [Node.js](https://nodejs.org/en) ( I recommend LTS or higher, but any version at or above 15 will work )
-2. Clone/Download this repository to your local machine
-3. Navigate to the cloned directory in your terminal or command prompt and run the following command:
+2. Download the source files from the [release page](https://github.com/spookier/youtube-easy-volume/releases/tag/v1.0.0) or clone this repository to your local machine
+3. Navigate to the downloaded directory in your terminal or command prompt and run the following command:
 ```sh
 npm run install-and-build
 ```
