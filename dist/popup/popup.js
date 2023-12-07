@@ -12,10 +12,8 @@ export function update_display(volume_value) {
     const display_number = document.getElementById("volDisplay");
     console.log(volume_value);
     if (display_number != null) {
-        if (volume_value == 0 || volume_value == null) {
+        if (volume_value == 0 || volume_value == null)
             display_number.innerHTML = "MUTED";
-            chrome.runtime.sendMessage({ action: "changeVolume" });
-        }
         else
             display_number.innerHTML = "VOLUME: " + volume_value;
     }

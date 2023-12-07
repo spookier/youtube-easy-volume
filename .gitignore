@@ -1,0 +1,10 @@
+dist/*.{js,map}
+node_modules/
+.env
+*.crx
+*.pem
+.vscode/
+*.log
+*.log.*
+*.swp
+.DS_Store

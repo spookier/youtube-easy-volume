@@ -10,10 +10,7 @@ export function update_display(volume_value: number): void
 	if (display_number != null)
 	{
 		if(volume_value == 0 || volume_value == null)
-		{
 			display_number.innerHTML = "MUTED";
-			chrome.runtime.sendMessage({ action: "changeVolume"});
-		}
 		else
 			display_number.innerHTML = "VOLUME: " + volume_value;
 	}
@@ -28,6 +25,7 @@ export function update_display(volume_value: number): void
 
 export async function handleSliderMove(this: HTMLInputElement)
 {
+	
     const newVolume = Number(this.value); // gets input from slider 
     update_display(newVolume);
 	return(null)
