@@ -1,4 +1,7 @@
-dist/*.{js,map}
+dist/*.js
+dist/*.map
+dist/popup/*.js
+dist/popup/*.map
 node_modules/
 .env
 *.crx
