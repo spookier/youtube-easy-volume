@@ -1,8 +1,8 @@
 {
 		"manifest_version": 3,
-		"name": "Better YouTube Volume",
-		"version": "1.0",
-		"description": "A better control over your YouTube volume",
+		"name": "EasyVolume for YouTube",
+		"version": "1.0.0",
+		"description": "Adjust YouTube volume in precise 1% increments for an enhanced audio experience",
 		"icons":
 		{
 			"16":"assets/logo.png",
@@ -13,7 +13,7 @@
 		"action":
 		{
 			"default_popup": "dist/index.html",
-			"default_title": "A better control over your YouTube volume"
+			"default_title": "EasyVolume - Precise Volume Control for YouTube"
 		},
 		"permissions":
 		[
@@ -27,5 +27,6 @@
 		"background":
 		{
 			"js": "dist/popup/background.js"
-		}
+		},
+		"author":"https://github.com/spookier"
 }
