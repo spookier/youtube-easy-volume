@@ -1,18 +1,19 @@
 let slider = document.getElementById("volSlider") as HTMLInputElement; // id for slider
 let volume = document.getElementById("volumeValue") as HTMLElement;     // number_displayed
-volume.innerHTML = slider.value;
+
+// Set the default slider value
+//volume.innerHTML = "100";
 
 
 slider.addEventListener("input", function ()
 {
-  volume.innerHTML = this.value;
-  const finalValue = Number(this.value) / 100;
 
   chrome.tabs.query({ currentWindow: true, active: true }, (tabs) => {
 	if (tabs[0] && tabs[0].url && (tabs[0].url.startsWith("chrome://") || tabs[0].url.startsWith("https://chromewebstore.google.com/")))
-	{
 		return ;
-	}
+	volume.innerHTML = this.value;
+	const finalValue = Number(this.value) / 100;
+	
     const myTabId = tabs[0].id;
 
     if (myTabId !== undefined) {
