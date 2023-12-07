@@ -4,10 +4,29 @@
   
 # EasyVolume for YouTube
 
-  
+
 **A Chrome extension that simplifies your YouTube experience by providing precise and easy volume control**
+
+<table>
   
-![Screenshot from 2023-12-06 20-52-50](https://github.com/spookier/youtube-easy-volume/assets/77325667/1edc4c8d-059f-430e-bed5-921c17bf6364)
+  <tr>
+    
+  <td align="center" width="0%">
+      
+  ![gimped](https://github.com/spookier/youtube-easy-volume/assets/77325667/1dc1955e-1d72-4c53-a932-b7ad0c786220)
+      
+  </td>
+    
+  <td align="center" width="0%">
+    
+  ![Screenshot from 2023-12-06 20-52-50](https://github.com/spookier/youtube-easy-volume/assets/77325667/1edc4c8d-059f-430e-bed5-921c17bf6364)
+      
+  </td>
+    
+  </tr>
+  
+</table>
+
 
 </div>
 
