@@ -12,6 +12,7 @@ export function update_display(volume_value: number): void
 		if(volume_value == 0 || volume_value == null)
 		{
 			display_number.innerHTML = "MUTED";
+			chrome.runtime.sendMessage({ action: "changeVolume"});
 		}
 		else
 			display_number.innerHTML = "VOLUME: " + volume_value;
@@ -85,15 +86,13 @@ export async function get_volume(): Promise<number | null>
 		if (volume_value == null || volume_value == 0)
 		{
 			let display_number = document.getElementById("volDisplay");
-			if (display_number != null)
+			if (display_number != null && volume_value == 0)
 			{
-				display_number.innerHTML = "MUTED!";
+				display_number.innerHTML = "MUTED";
 			}
 			return (null);
 		}
-
 		return (Number(volume_value));
 	}
 	return (null);
 }
-

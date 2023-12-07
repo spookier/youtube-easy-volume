@@ -28,11 +28,27 @@ slider.addEventListener("input", function ()
 	function changeVolume(volume: number)
 	{
 		const videoElement = document.querySelector('.html5-main-video') as HTMLVideoElement | null;
-		if (videoElement)
+
+		if (videoElement != null)
 		{
+			if(videoElement.muted == true)
+			{
+				videoElement.muted = false;
+
+				const volumeClass = document.querySelector(".ytp-volume-panel") as HTMLElement;
+				let vol_text = volumeClass?.getAttribute("aria-valuetext");
+				if(vol_text?.includes("muted") == true)
+				{
+					vol_text = vol_text.replace("muted", "");
+					volumeClass?.setAttribute("aria-valuetext", vol_text);
+					
+					toggleYouTubeMute(); 	// Calls the function to simulate a click on the YouTube mute button
+				}
+			}
 			videoElement.volume = volume;
 			update_youtube_display(volume);
 		}
+
 
 		function update_youtube_display(volume: number) : void
 		{
@@ -49,12 +65,10 @@ slider.addEventListener("input", function ()
 
 			let vol_text = volumeClass?.getAttribute("aria-valuetext");
 
-
 			
-			// TODO: Do the unmuting here
 			if(vol_text?.includes("muted") == true)
 			{
-				console.log("muted");
+				//console.log("@DEBUG - muted");
 				return ;
 			}
 
@@ -65,5 +79,35 @@ slider.addEventListener("input", function ()
 				volumeClass.setAttribute("aria-valuenow", vol_value);
 			}
 		}
+		
+		// Function to simulate a click on the YouTube mute button
+		function toggleYouTubeMute() {
+			// The selector for the mute button; this might change and needs to be verified
+			const muteButtonSelector = '.ytp-mute-button';
+
+			// Select the mute button element
+			const muteButton = document.querySelector(muteButtonSelector);
+
+			// Check if the mute button element is found
+			if (muteButton)
+			{
+				// Create a new click event
+				const clickEvent = new MouseEvent('click', {
+					bubbles: true,
+					cancelable: true,
+					view: window
+				});
+
+				// Dispatch the event to the mute button
+				muteButton.dispatchEvent(clickEvent);
+			}
+			else
+			{
+				//console.log('Mute button not found');
+			}
+		}
 	}
 });
+
+
+
